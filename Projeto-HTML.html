@@ -1,0 +1,1354 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Projeto Curso de Digitação</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="30d9d896-99b1-800b-bc72-fd11e7ee6631" class="page sans"><header><h1 class="page-title" dir="auto">Projeto Curso de Digitação</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody><tr class="property-row property-row-date"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/calendar_gray.svg" style="width:14px;height:14px;display:block"/></span>Data</th><td><time>@26 de fevereiro de 2026</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>Matéria</th><td><span class="selected-value select-value-color-gray">FrontEnd</span></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>Prioridade</th><td><span class="selected-value select-value-color-default">Urgente</span></td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><img src="https://www.notion.so/icons/burst_gray.svg" style="width:14px;height:14px;display:block"/></span>Status</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Concluído</span></td></tr></tbody></table></header><div class="page-body"><div style="display:contents" dir="auto"><blockquote id="30d9d896-99b1-80b4-bebd-e762352eb865" class="">Relatório Técnico baseado na atividade elaborada em Programação FrontEnd</blockquote></div><div style="display:contents" dir="auto"><h2 id="30d9d896-99b1-8083-92f4-f7d3671fe8ad" class="">20/02/2026</h2></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-8033-a30e-e0a805ee7147" class="">
+</p></div><div style="display:contents" dir="auto"><h3 id="30d9d896-99b1-80bd-857e-fac877e6c57d" class="">Contextualização do Projeto:</h3></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-8010-ab45-e1bb77982197" class="">Site desenvolvido para praticar a digitação em diferentes níveis de dificuldade, contabilizando a quantidade de palavras corretas, erradas e o tempo restante da prática.</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-807e-bbe7-cb32b590a00b" class="">
+</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-80ec-9345-c802052d978a" class="">Arquivos utilizados:</p></div><div style="display:contents" dir="auto"><ul id="30d9d896-99b1-80ba-bc97-f0597c962301" class="bulleted-list"><li style="list-style-type:disc">index.html</li></ul></div><div style="display:contents" dir="auto"><ul id="30d9d896-99b1-80e0-98b1-c0ca20775d4a" class="bulleted-list"><li style="list-style-type:disc">estilos.css</li></ul></div><div style="display:contents" dir="auto"><ul id="30d9d896-99b1-8023-aeed-c70dca2ebb7d" class="bulleted-list"><li style="list-style-type:disc">gerenciador.js</li></ul></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-80a7-8869-ed6a14469dec" class="">
+</p></div><div style="display:contents" dir="auto"><h3 id="30d9d896-99b1-8030-941c-dbce1634b6b9" class="">Introdução ao HTML:</h3></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-80ad-b94a-c7ec7e88a724" class="">Será criado o esqueleto básico do HTML para ser desenvolvido, selecionando a linguagem, criando título e ligações com os arquivos “estilos.css” e “gerenciador.js”.</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-8093-b3ac-cd98ba3337fe" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="30d9d896-99b1-8053-a271-f5679f7886eb" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-br&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Curso Avançado de Digitação&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;estilos.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    &lt;script src=&quot;gerenciador.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-8042-a31f-fafab6a0a572" class="">
+</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-80cf-8e00-f306d786b28f" class="">Em seguida é criado uma &lt;div&gt; com o identificador “menu” dentro da tag &lt;body&gt;, onde será armazenado os níveis de dificuldade. É criado um título &lt;h3&gt; para indicar ao usuário que esse é o local para selecionar os níveis.</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-800a-a134-fbf0fecac1be" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="30d9d896-99b1-801d-83a3-ee609948e445" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;body&gt;
+&lt;div id=&quot;menu&quot;&gt;
+        &lt;h3&gt;Níveis de Digitação&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/body&gt;</code></pre></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-802c-827d-dfed25b88a0e" class="">
+</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-80db-b70b-ff5a20531228" class="">Abaixo do &lt;h3&gt; é criado uma lista não ordenada com tags de ancora dentro dos elementos de lista, adicionando um onclick para que quando selecionado ele procure o nível de dificuldade correspondente e mande para o usuário.</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-800d-b7ea-dd8f5281f6a9" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="30d9d896-99b1-8070-815b-eec4db42c0ed" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;body&gt;
+&lt;div id=&quot;menu&quot;&gt;
+     &lt;h3&gt;Níveis de Digitação&lt;/h3&gt;
+
+     &lt;ul&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(1)&quot;&gt;Nível 1&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(2)&quot;&gt;Nível 2&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(3)&quot;&gt;Nível 3&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(4)&quot;&gt;Nível 4&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(5)&quot;&gt;Nível 5&lt;/a&gt;&lt;/li&gt;
+     &lt;/ul&gt;
+&lt;/div&gt;
+&lt;/body&gt;</code></pre></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-80bb-b8ee-de6c0db4e0a2" class="">
+</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-8087-83d2-df76a88e386f" class="">Dentro do body é criado uma nova div com o identificador “conteudo”, onde vai ficar armazenado o conteúdo do nível.</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-8088-8d5f-ddb909ebd626" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="30d9d896-99b1-804e-94c6-d918b99e26ff" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;body&gt;
+&lt;div id=&quot;menu&quot;&gt;
+     &lt;h3&gt;Níveis de Digitação&lt;/h3&gt;
+
+     &lt;ul&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(1)&quot;&gt;Nível 1&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(2)&quot;&gt;Nível 2&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(3)&quot;&gt;Nível 3&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(4)&quot;&gt;Nível 4&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(5)&quot;&gt;Nível 5&lt;/a&gt;&lt;/li&gt;
+     &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;conteudo&quot;&gt;
+        
+&lt;/div&gt;
+&lt;/body&gt;
+</code></pre></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-8030-b9d2-ed2664e2e210" class="">É adicionado uma tag h1 para criar um título visual dentro do HTML</p></div><div style="display:contents" dir="auto"><p id="3129d896-99b1-8041-9e22-c4217587124c" class="">
+</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-80b8-8a1e-d7200404b273" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="30d9d896-99b1-801b-9bba-e4a34c2127df" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;body&gt;
+&lt;div id=&quot;menu&quot;&gt;
+     &lt;h3&gt;Níveis de Digitação&lt;/h3&gt;
+
+     &lt;ul&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(1)&quot;&gt;Nível 1&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(2)&quot;&gt;Nível 2&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(3)&quot;&gt;Nível 3&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(4)&quot;&gt;Nível 4&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(5)&quot;&gt;Nível 5&lt;/a&gt;&lt;/li&gt;
+     &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;conteudo&quot;&gt;
+    &lt;h1&gt;Curso Avançado de Digitação&lt;/h1&gt;
+&lt;/div&gt;
+&lt;/body&gt;</code></pre></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-80a0-a0d1-c3d30c3067ee" class="">
+</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-80eb-b8d4-ea2c77af8a6b" class="">Será adicionado uma tag &lt;div&gt; com identificador “texto”, que mudará seu conteúdo de acordo com cada nível de dificuldade.</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-807d-9b73-f92c085328d6" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="30d9d896-99b1-8056-a3f6-c755feb2b6bd" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;body&gt;
+&lt;div id=&quot;menu&quot;&gt;
+     &lt;h3&gt;Níveis de Digitação&lt;/h3&gt;
+
+     &lt;ul&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(1)&quot;&gt;Nível 1&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(2)&quot;&gt;Nível 2&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(3)&quot;&gt;Nível 3&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(4)&quot;&gt;Nível 4&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(5)&quot;&gt;Nível 5&lt;/a&gt;&lt;/li&gt;
+     &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;conteudo&quot;&gt;
+    &lt;h1&gt;Curso Avançado de Digitação&lt;/h1&gt;
+  
+    &lt;div id=&quot;texto&quot;&gt;Escolha um nível para começar&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;</code></pre></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-8025-8502-f0737682952a" class="">
+</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-8083-85fc-dfa8a4751607" class="">É adicionado um &lt;input&gt; do tipo “text” e identificador “entrada” com autofocus e disabled, onde o usuário irá digitar a frase para treinar a digitação.</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-80b5-8da6-e69f6b918c5f" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="30d9d896-99b1-80a3-956d-fdd8f8b4c7a2" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;body&gt;
+&lt;div id=&quot;menu&quot;&gt;
+     &lt;h3&gt;Níveis de Digitação&lt;/h3&gt;
+
+     &lt;ul&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(1)&quot;&gt;Nível 1&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(2)&quot;&gt;Nível 2&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(3)&quot;&gt;Nível 3&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(4)&quot;&gt;Nível 4&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(5)&quot;&gt;Nível 5&lt;/a&gt;&lt;/li&gt;
+     &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;conteudo&quot;&gt;
+    &lt;h1&gt;Curso Avançado de Digitação&lt;/h1&gt;
+  
+    &lt;div id=&quot;texto&quot;&gt;Escolha um nível para começar&lt;/div&gt;
+    
+    &lt;input type=&quot;text&quot; id=&quot;entrada&quot; autofocus disabled&gt;
+&lt;/div&gt;
+&lt;/body&gt;</code></pre></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-80c7-b1c8-f62f81e4571f" class="">
+</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-80db-825c-dbc9f28188a2" class="">Será adicionada uma &lt;div&gt; com identificador “estatisticas”, onde ficarão localizadas as informações de letras corretas e erradas, usando &lt;span&gt; com identificadores “contadorCerto” e “contadorErrado”.</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-8023-a1cf-de86d169aa49" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="30d9d896-99b1-80a7-a2ed-f7a146f0e267" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;body&gt;
+&lt;div id=&quot;menu&quot;&gt;
+     &lt;h3&gt;Níveis de Digitação&lt;/h3&gt;
+
+     &lt;ul&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(1)&quot;&gt;Nível 1&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(2)&quot;&gt;Nível 2&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(3)&quot;&gt;Nível 3&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(4)&quot;&gt;Nível 4&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(5)&quot;&gt;Nível 5&lt;/a&gt;&lt;/li&gt;
+     &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;conteudo&quot;&gt;
+    &lt;h1&gt;Curso Avançado de Digitação&lt;/h1&gt;
+  
+    &lt;div id=&quot;texto&quot;&gt;Escolha um nível para começar&lt;/div&gt;
+    
+    &lt;input type=&quot;text&quot; id=&quot;entrada&quot; autofocus disabled&gt;
+    
+    &lt;div id=&quot;estatisticas&quot;&gt;Letras corretas: &lt;span id=&quot;contadorCerto&quot;&gt;0&lt;/span&gt; | Letras erradas: &lt;span id=&quot;contadorErrado&quot;&gt;0&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;div id=&quot;conteudo&quot;&gt;
+    &lt;h1&gt;Curso Avançado de Digitação&lt;/h1&gt;
+    
+    &lt;div id=&quot;texto&quot;&gt;Escolha um nível para começar&lt;/div&gt;
+    
+    &lt;input type=&quot;text&quot; id=&quot;entrada&quot; autofocus disabled&gt;
+    
+    &lt;div id=&quot;estatisticas&quot;&gt;Letras corretas: &lt;span id=&quot;contadorCerto&quot;&gt;0&lt;/span&gt; | Letras erradas: &lt;span id=&quot;contadorErrado&quot;&gt;0&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-8090-8665-c233e49e78c8" class="">
+</p></div><div style="display:contents" dir="auto"><p id="30d9d896-99b1-8005-a13c-c878d364b08b" class="">Será adicionado uma &lt;div&gt; com o identificador “tempo” Que irá apresentar o tempo restante que o usuário tem para terminar a digitação, utilizando a tag &lt;span&gt; com o identificador “contatorTempo” para a contagem do tempo.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8042-a83c-d1c47b683e2d" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-8042-802f-ef8fd3157c16" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;body&gt;
+&lt;div id=&quot;menu&quot;&gt;
+     &lt;h3&gt;Níveis de Digitação&lt;/h3&gt;
+
+     &lt;ul&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(1)&quot;&gt;Nível 1&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(2)&quot;&gt;Nível 2&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(3)&quot;&gt;Nível 3&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(4)&quot;&gt;Nível 4&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(5)&quot;&gt;Nível 5&lt;/a&gt;&lt;/li&gt;
+     &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;conteudo&quot;&gt;
+    &lt;h1&gt;Curso Avançado de Digitação&lt;/h1&gt;
+  
+    &lt;div id=&quot;texto&quot;&gt;Escolha um nível para começar&lt;/div&gt;
+    
+    &lt;input type=&quot;text&quot; id=&quot;entrada&quot; autofocus disabled&gt;
+    
+    &lt;div id=&quot;estatisticas&quot;&gt;Letras corretas: &lt;span id=&quot;contadorCerto&quot;&gt;0&lt;/span&gt; | Letras erradas: &lt;span id=&quot;contadorErrado&quot;&gt;0&lt;/span&gt;&lt;/div&gt;
+    
+    &lt;div id=&quot;tempo&quot;&gt;Tempo restante: &lt;span id=&quot;contadorTempo&quot;&gt;60&lt;/span&gt;s&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8072-a4e6-ec4b05ef5624" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80b3-90d3-faf3cd58733d" class="">Por fim é adicionado a tag &lt;script&gt; ao final do &lt;body&gt; para poder conectar os identificadores com o gerenciador.js.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80b8-9965-f24c55de9ee9" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-8041-8427-c6fb11a4a13d" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;body&gt;
+    &lt;div id=&quot;menu&quot;&gt;
+        &lt;h3&gt;Níveis de Digitação&lt;/h3&gt;
+
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(1)&quot;&gt;Nível 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(2)&quot;&gt;Nível 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(3)&quot;&gt;Nível 3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(4)&quot;&gt;Nível 4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(5)&quot;&gt;Nível 5&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;div id=&quot;conteudo&quot;&gt;
+        &lt;h1&gt;Curso Avançado de Digitação&lt;/h1&gt;
+        &lt;div id=&quot;texto&quot;&gt;Escolha um nível para começar&lt;/div&gt;
+
+        &lt;input type=&quot;text&quot; id=&quot;entrada&quot; autofocus disabled&gt;
+
+        &lt;div id=&quot;estatisticas&quot;&gt;Letras corretas: &lt;span id=&quot;contadorCerto&quot;&gt;0&lt;/span&gt; | Letras erradas: &lt;span id=&quot;contadorErrado&quot;&gt;0&lt;/span&gt;&lt;/div&gt;
+
+        &lt;div id=&quot;tempo&quot;&gt;Tempo restante: &lt;span id=&quot;contadorTempo&quot;&gt;60&lt;/span&gt;s&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script src=&quot;gerenciador.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8043-bd3f-e0dd206661ef" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-803c-a1a8-f41fc11dd6b5" class="">Digitacao.html completo:</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-807e-b26b-d4c66e30c848" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-80cf-a446-c93d71d4b4f1" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-br&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Curso Avançado de Digitação&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;estilos.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;menu&quot;&gt;
+        &lt;h3&gt;Níveis de Digitação&lt;/h3&gt;
+
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(1)&quot;&gt;Nível 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(2)&quot;&gt;Nível 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(3)&quot;&gt;Nível 3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(4)&quot;&gt;Nível 4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;mudarNivel(5)&quot;&gt;Nível 5&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;div id=&quot;conteudo&quot;&gt;
+        &lt;h1&gt;Curso Avançado de Digitação&lt;/h1&gt;
+        &lt;div id=&quot;texto&quot;&gt;Escolha um nível para começar&lt;/div&gt;
+
+        &lt;input type=&quot;text&quot; id=&quot;entrada&quot; autofocus disabled&gt;
+
+        &lt;div id=&quot;estatisticas&quot;&gt;Letras corretas: &lt;span id=&quot;contadorCerto&quot;&gt;0&lt;/span&gt; | Letras erradas: &lt;span id=&quot;contadorErrado&quot;&gt;0&lt;/span&gt;&lt;/div&gt;
+
+        &lt;div id=&quot;tempo&quot;&gt;Tempo restante: &lt;span id=&quot;contadorTempo&quot;&gt;60&lt;/span&gt;s&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script src=&quot;gerenciador.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80c1-b3fd-d103741b86e6" class="">
+</p></div><div style="display:contents" dir="auto"><h3 id="3139d896-99b1-80cb-852f-dfb2864caf1d" class="">Estilização com CSS:</h3></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8040-b845-f93f00af4422" class="">Primeiro é definido os espaços internos e externos, a altura e como os elementos da página serão exibidos.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-803d-ab47-de4c0624cf04" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-800c-9126-d17e3ec10918" class="code code-wrap"><code class="language-CSS" style="white-space:pre-wrap;word-break:break-all">body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-801b-978f-df39c8bdb218" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80db-aba5-ece32adddba9" class="">No menu de seleção é definido uma cor de fundo, a cor da letra, a largura e altura do elemento, espaço interno, define se a borda e o espaço interno contam no tamanho total e o controle da rolagem vertical do conteúdo.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8085-ae9c-f083c83f63c6" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-80a2-8d96-e2d3d130e543" class="code code-wrap"><code class="language-CSS" style="white-space:pre-wrap;word-break:break-all">#menu {
+    background-color: #333;
+    color: #fff;
+    width: 200px;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8070-8a3e-c3b540d29bef" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-803d-88a0-e92009ecae93" class="">É definido o afastamento externo do topo da tag &lt;h3&gt;.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8087-95b8-d3966ddbc211" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-80b2-aa20-cc926a896c05" class="code code-wrap"><code class="language-CSS" style="white-space:pre-wrap;word-break:break-all">#menu h3 {
+    margin-top: 0;
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80e3-b6ec-edefa98eee0c" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8015-9f34-d0981b6ce88e" class="">É definido o estilo dos marcadores e o espaço interno dentro da lista do menu.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8097-bd5d-f934f8682ef7" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-8037-bbb2-db7525dd5ce7" class="code code-wrap"><code class="language-CSS" style="white-space:pre-wrap;word-break:break-all">#menu ul {
+    list-style: none;
+    padding: 0;
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8062-bc01-fdbe05e57a18" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-801f-b828-c9fb8d5fff48" class="">É definido a cor, decorações, espaço interno e exibição do texto.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8018-908e-c9fe74a49c34" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-80ac-bd2b-e941bd000302" class="code code-wrap"><code class="language-CSS" style="white-space:pre-wrap;word-break:break-all">#menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80e9-bb8e-fe1106638b1e" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8062-af5a-c97f082f8824" class="">É definido a cor de fundo do elemento ao passar o mouse por cima.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8033-b4f1-dbbba22f9ea6" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-8096-89bd-ddd30c002ddc" class="code code-wrap"><code class="language-CSS" style="white-space:pre-wrap;word-break:break-all">#menu ul li a:hover {
+    background-color: #555;
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8092-9ad6-f47d14d1dbf6" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-801a-bea3-e67f111e303d" class="">É definido o quanto o elemento deve crescer para ocupar o espaço livre, o espaço interno  a rolagem vertical do conteúdo de digitação.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80b7-b9d8-cba46e5aa2ce" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-805b-a2b1-f620240b8d8b" class="code code-wrap"><code class="language-CSS" style="white-space:pre-wrap;word-break:break-all">#conteudo {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-808b-b967-ff34f0f111bf" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80a7-9a65-f0cadfadae82" class="">É definido a o tamanho da fonte, o espaço externo e interno, o estilo e arredondamento da borda e a cor do plano de fundo do texto a ser digitado.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80f8-bbc5-cd3bd76d4554" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-80c5-b77c-d084a9ed16cd" class="code code-wrap"><code class="language-CSS" style="white-space:pre-wrap;word-break:break-all">#texto {
+    font-size: 24px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80db-82a5-e5c7934b4c22" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80e9-8669-fb5142f77adc" class="">É definido o tamanho da fonte, a largura, os espaços externos e internos, a espessura, cor e arredondamento das bordas da entrada de dados onde o usuário irá praticar a digitação.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80e3-a874-dc3bb3ff88b8" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-8060-ae86-d09ff3834e5b" class="code code-wrap"><code class="language-CSS" style="white-space:pre-wrap;word-break:break-all">#entrada {
+    font-size: 18px;
+    width: 80%;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid #200d8a;
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8007-aff5-e0f0d4a9ecce" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80a4-afcf-dca914534e10" class="">Define o tamanho da fonte e o espaço externo das informações de estatísticas e tempo de digitação.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80f3-9ff1-da3f1f488f2c" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-80da-983c-cf6361ae85c9" class="code code-wrap"><code class="language-CSS" style="white-space:pre-wrap;word-break:break-all">#estatisticas, #tempo {
+    font-size: 18px;
+    margin: 10px 0;
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80f7-b12b-eaf51b08afa5" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8021-910b-f84cba230ded" class="">Define a cor das letras que estiverem corretas.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-800f-9d52-de7f9cb04ee5" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-800f-802d-fcf9cb3a4c6a" class="code code-wrap"><code class="language-CSS" style="white-space:pre-wrap;word-break:break-all">.certo {
+    color: green;
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-801f-9452-e75efcc9d871" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-805b-a429-d5901572f648" class="">Define a cor das letras que estiverem erradas.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80cf-860a-e65b29106ca7" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-80ea-94b6-ecbd2eef42ef" class="code code-wrap"><code class="language-CSS" style="white-space:pre-wrap;word-break:break-all">.errado {
+    color: red;
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80c2-80ac-e9d53031bef9" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8038-a4cb-d5887ba2c449" class="">Estilos.css completo:</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-802e-90e2-cf0b2f819686" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-807c-bf3d-f8afb50dbcfb" class="code code-wrap"><code class="language-CSS" style="white-space:pre-wrap;word-break:break-all">body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+}
+
+#menu {
+    background-color: #333;
+    color: #fff;
+    width: 200px;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#menu h3 {
+    margin-top: 0;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+}
+
+#menu ul li a:hover {
+    background-color: #555;
+}
+
+#conteudo {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#texto {
+    font-size: 24px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#entrada {
+    font-size: 18px;
+    width: 80%;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid #200d8a;
+}
+
+#estatisticas, #tempo {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.certo {
+    color: green;
+}
+
+.errado {
+    color: red;
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8086-93a3-c6c730584202" class="">
+</p></div><div style="display:contents" dir="auto"><h3 id="3139d896-99b1-8001-98b7-eab7a75eafb0" class="">Definindo a funcionalidade com JavaScript:</h3></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-804d-9647-ffb5f9039fd6" class="">Primeiro é definido todos os textos que serão separados em diferentes níveis utilizando uma lista.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8055-b8ee-ea9e66d6236f" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-800d-b781-cbb6dab2c677" class="code code-wrap"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">const textos = [
+    &quot;Aprender a digitar é essencial. Comece com práticas diárias.&quot;,
+    &quot;As crianças correm na areia da praia, enquanto o sol se põe lentamente no horizonte dourado ao longe.&quot;,
+    &quot;Na tranquila tarde de verão, o vento suave balança as árvores, enquanto a flores exalam um doce perfume que enche o ar ao redor do jardim perfumado.&quot;,
+    &quot;Sob o céu estrelado da noite, os animais da floresta começam a se recolher em suas tocas, enquanto os grilos cantam sua sinfonia noturna, acompanhados pelo suave murmúrio do riacho que serpenteia entre as pedras.&quot;,
+    &quot;No coração da cidade agitada, o trânsito flui incessantemente, enquanto as luzes dos prédios brilham intensamente, refletindo-se nas águas calmas do rio que corta a metrópole, criando um cenário urbano de beleza única, onde o caos e a serenidade se encontram harmoniosamente.&quot;
+];</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-809d-b734-d05a3a03db18" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8076-8267-eb174c9095d2" class="">É definido as principais variáveis que serão utilizadas ao longo do código.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80c3-99c2-d6a13a28c090" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-80df-aede-eac9c4246dff" class="code code-wrap"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">let contadorCerto = 0;
+
+let contadorErrado = 0;
+
+let intervaloTempo;
+
+let tempoRestante = 60;
+
+let textoAtual = &#x27;&#x27;;</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8055-86ae-f7d4d4b880b0" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80c6-9873-cf540177d4b3" class="">É definido a função de contagem de tempo para a digitação. Assim que o usuário começa a digitar, o cronômetro inicia a contagem, sendo o tempo restante de 60 segundos e vai diminuindo 1 a cada 1000 milissegundos. Após o término do tempo restante ele chama a função de verificar resultado automaticamente.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80b9-aaf8-e575181403ca" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-8044-9e3f-e2a63b8f3c06" class="code code-wrap"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">function iniciarContadorTempo() {
+    if (intervaloTempo) clearInterval(intervaloTempo);
+
+    tempoRestante = 60;
+
+    document.getElementById(&#x27;contadorTempo&#x27;).textContent = tempoRestante;
+
+    intervaloTempo = setInterval(() =&gt; {
+
+        tempoRestante--;
+
+        document.getElementById(&#x27;contadorTempo&#x27;).textContent = tempoRestante;
+
+        if (tempoRestante &lt;= 0) {
+            clearInterval(intervaloTempo);
+            verificarResultado();
+        }
+    }, 1000);
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8005-b16d-c3a6d4af189f" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8011-bd56-f67685ec03ac" class="">É definida a função de verificação de resultado. Assim que o usuário termina de digitar ou então o cronômetro chega a 0, o código calcula a precisão da digitação do usuário. O usuário só será aprovado se seu resultado for acima de 80%.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-806a-8ba8-dbdbf00e4568" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-803a-95ea-d46fcb1a2fd7" class="code code-wrap"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">function verificarResultado() {
+    const porcentagemCerta = contadorCerto / textoAtual.length;
+
+    if (porcentagemCerta &gt;= 0.8) {
+        alert(&#x27;Parabéns! Você foi aprovado.&#x27;);
+    } else {
+        alert(&#x27;Tente novamente!&#x27;)
+    }
+
+    resetar();
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-807b-878b-f230c7602468" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80d9-af0f-dae087c7ef01" class="">É definida a função de resetar para que o usuário possa praticar mais vezes, limpando o texto, bloqueando a entrada de dados, redefinindo todos os contadores e removendo as cores certas e erradas do texto.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80d4-82a7-ebf714d3790e" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-80da-a83f-fa3643c1f4bf" class="code code-wrap"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">function resetar() {
+    const elementoEntrada = document.getElementById(&#x27;entrada&#x27;);
+    elementoEntrada.value = &#x27;&#x27;;
+
+    elementoEntrada.disabled = true
+
+    clearInterval(intervaloTempo);
+
+    document.getElementById(&#x27;contadorCerto&#x27;).textContent = &#x27;0&#x27;;
+    
+    document.getElementById(&#x27;contadorErrado&#x27;).textContent = &#x27;0&#x27;;
+
+    document.getElementById(&#x27;contadorTempo&#x27;).textContent = &#x27;60&#x27;;
+
+    tempoRestante = 60;
+
+    contadorCerto = 0;
+
+    contadorErrado = 0;
+
+    [...document.getElementById(&#x27;texto&#x27;).children].forEach(span =&gt; {
+        span.classList.remove(&#x27;certo&#x27;, &#x27;errado&#x27;);
+    });
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-800b-9264-de793bd744c0" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-803c-a0c8-e8a394d96bdf" class="">É definida a função de mudar de nível/dificuldade de digitação. Quando o usuário seleciona um nível de dificuldade, as informações de contagem e estatísticas são resetadas, o texto a ser digitado é trocado para o nível correspondido e o campo de digitação é desbloqueado para que o usuário possa começar a treinar a digitação.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8000-a5cd-db3570f14f15" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-8018-874e-ef173b62c0ba" class="code code-wrap"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">function mudarNivel(nivel) {
+    resetar();
+
+    textoAtual = textos[nivel - 1];
+
+    const elementoTexto = document.getElementById(&#x27;texto&#x27;);
+
+    elementoTexto.innerHTML = textoAtual.split(&#x27;&#x27;).map(char =&gt; `&lt;span&gt;${char}&lt;/span&gt;`).join(&#x27;&#x27;);
+
+    document.getElementById(&#x27;entrada&#x27;).disabled = false;
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80a4-bd56-c0c47bb07ee5" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80bc-86df-f5e86918788b" class="">É definido o evento que juntará todas as funções apresentadas e fará com que o curso de digitar funcione por completo. O usuário irá abrir a tela, selecionará a dificuldade e começar a digitar. A partir do momento que o usuário começar a digitar será iniciado o tempo e a contagem de letras certas e erradas, comparando o que o usuário está digitando com o texto armazenado dentro da lista. Se a letra for igual irá ficar verde e se estiver errado ficará vermelha.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8004-9322-ff981c7ba9ce" class="">Quando o usuário terminar de digitar ou quanto o contator de tempo tiver terminado, o código irá apresentar as estatísticas e quanto tempo sobrou. Se as estatísticas estiverem menores que 80%, o sistema irá reprovar o usuário.</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-80a0-9c8f-c77958029fb7" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-8084-8ef6-c2f7380e99db" class="code code-wrap"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">document.getElementById(&#x27;entrada&#x27;).addEventListener(&#x27;input&#x27;, function() {
+    if (tempoRestante === 60) iniciarContadorTempo();
+
+        const entradaTexto = this.value;
+
+    if (entradaTexto.length &gt; textoAtual.length) {
+        this.value = entradaTexto.substring(0, textoAtual.length);
+
+        return
+    }
+
+    contadorErrado = 0;
+
+    [...document.getElementById(&#x27;texto&#x27;).children].forEach((span, index) =&gt; {
+        if (index &lt; entradaTexto.length) {
+            if (entradaTexto[index] === span.textContent) {
+                span.classList.add(&#x27;certo&#x27;);
+
+                span.classList.remove(&#x27;errado&#x27;);
+
+                contadorCerto++;
+            } else {
+                span.classList.add(&#x27;errado&#x27;);
+
+                span.classList.remove(&#x27;certo&#x27;);
+
+                contadorErrado++;
+            }
+        } else {
+            span.classList.remove(&#x27;certo&#x27;, &#x27;errado&#x27;);
+        }
+    });
+
+    document.getElementById(&#x27;contadorCerto&#x27;).textContent = contadorCerto;
+
+    document.getElementById(&#x27;contadorErrado&#x27;).textContent = contadorErrado;
+
+    if (entradaTexto.length === textoAtual.length) {
+        verificarResultado();
+    }
+})</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8082-b93d-ed2cbabdea5f" class="">
+</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-803d-805c-ffe399fa3772" class="">Código gerenciador.js completo:</p></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8002-bf7b-dc49c7513f26" class="">
+</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3139d896-99b1-8093-8332-fc9e32114cc9" class="code code-wrap"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">const textos = [
+    &quot;Aprender a digitar é essencial. Comece com práticas diárias.&quot;,
+    &quot;As crianças correm na areia da praia, enquanto o sol se põe lentamente no horizonte dourado ao longe.&quot;,
+    &quot;Na tranquila tarde de verão, o vento suave balança as árvores, enquanto a flores exalam um doce perfume que enche o ar ao redor do jardim perfumado.&quot;,
+    &quot;Sob o céu estrelado da noite, os animais da floresta começam a se recolher em suas tocas, enquanto os grilos cantam sua sinfonia noturna, acompanhados pelo suave murmúrio do riacho que serpenteia entre as pedras.&quot;,
+    &quot;No coração da cidade agitada, o trânsito flui incessantemente, enquanto as luzes dos prédios brilham intensamente, refletindo-se nas águas calmas do rio que corta a metrópole, criando um cenário urbano de beleza única, onde o caos e a serenidade se encontram harmoniosamente.&quot;
+];
+
+let contadorCerto = 0;
+
+let contadorErrado = 0;
+
+let intervaloTempo;
+
+let tempoRestante = 60;
+
+let textoAtual = &#x27;&#x27;;
+
+function iniciarContadorTempo() {
+    if (intervaloTempo) clearInterval(intervaloTempo);
+
+    tempoRestante = 60;
+
+    document.getElementById(&#x27;contadorTempo&#x27;).textContent = tempoRestante;
+
+    intervaloTempo = setInterval(() =&gt; {
+
+        tempoRestante--;
+
+        document.getElementById(&#x27;contadorTempo&#x27;).textContent = tempoRestante;
+
+        if (tempoRestante &lt;= 0) {
+            clearInterval(intervaloTempo);
+            verificarResultado();
+        }
+    }, 1000);
+}
+
+function verificarResultado() {
+    const porcentagemCerta = contadorCerto / textoAtual.length;
+
+    if (porcentagemCerta &gt;= 0.8) {
+        alert(&#x27;Parabéns! Você foi aprovado.&#x27;);
+    } else {
+        alert(&#x27;Tente novamente!&#x27;)
+    }
+
+    resetar();
+}
+
+function resetar() {
+    const elementoEntrada = document.getElementById(&#x27;entrada&#x27;);
+    elementoEntrada.value = &#x27;&#x27;;
+
+    elementoEntrada.disabled = true
+
+    clearInterval(intervaloTempo);
+
+    document.getElementById(&#x27;contadorCerto&#x27;).textContent = &#x27;0&#x27;;
+    
+    document.getElementById(&#x27;contadorErrado&#x27;).textContent = &#x27;0&#x27;;
+
+    document.getElementById(&#x27;contadorTempo&#x27;).textContent = &#x27;60&#x27;;
+
+    tempoRestante = 60;
+
+    contadorCerto = 0;
+
+    contadorErrado = 0;
+
+    [...document.getElementById(&#x27;texto&#x27;).children].forEach(span =&gt; {
+        span.classList.remove(&#x27;certo&#x27;, &#x27;errado&#x27;);
+    });
+}
+
+function mudarNivel(nivel) {
+    resetar();
+
+    textoAtual = textos[nivel - 1];
+
+    const elementoTexto = document.getElementById(&#x27;texto&#x27;);
+
+    elementoTexto.innerHTML = textoAtual.split(&#x27;&#x27;).map(char =&gt; `&lt;span&gt;${char}&lt;/span&gt;`).join(&#x27;&#x27;);
+
+    document.getElementById(&#x27;entrada&#x27;).disabled = false;
+}
+
+document.getElementById(&#x27;entrada&#x27;).addEventListener(&#x27;input&#x27;, function() {
+    if (tempoRestante === 60) iniciarContadorTempo();
+
+        const entradaTexto = this.value;
+
+    if (entradaTexto.length &gt; textoAtual.length) {
+        this.value = entradaTexto.substring(0, textoAtual.length);
+
+        return
+    }
+
+    contadorErrado = 0;
+
+    [...document.getElementById(&#x27;texto&#x27;).children].forEach((span, index) =&gt; {
+        if (index &lt; entradaTexto.length) {
+            if (entradaTexto[index] === span.textContent) {
+                span.classList.add(&#x27;certo&#x27;);
+
+                span.classList.remove(&#x27;errado&#x27;);
+
+                contadorCerto++;
+            } else {
+                span.classList.add(&#x27;errado&#x27;);
+
+                span.classList.remove(&#x27;certo&#x27;);
+
+                contadorErrado++;
+            }
+        } else {
+            span.classList.remove(&#x27;certo&#x27;, &#x27;errado&#x27;);
+        }
+    });
+
+    document.getElementById(&#x27;contadorCerto&#x27;).textContent = contadorCerto;
+
+    document.getElementById(&#x27;contadorErrado&#x27;).textContent = contadorErrado;
+
+    if (entradaTexto.length === textoAtual.length) {
+        verificarResultado();
+    }
+})</code></pre></div><div style="display:contents" dir="auto"><p id="3139d896-99b1-8056-b79b-eab933a229b2" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
